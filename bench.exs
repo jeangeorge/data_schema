@@ -1,4 +1,4 @@
-large_xml = File.read!(Path.expand("really_large_xml_fixture.xml"))
+large_xml = File.read!(Path.expand("random.xml"))
 {:ok, x} = DataSchema.Saxy.StructHandler.parse_string(large_xml);
 
 Benchee.run(
