@@ -1,3 +1,5 @@
+:erts_internal.debug_on()
+
 large_xml = File.read!(Path.expand("random.xml"))
 {:ok, x} = DataSchema.Saxy.StructHandler.parse_string(large_xml);
 
@@ -10,3 +12,5 @@ Benchee.run(
   memory_time: 1,
   reduction_time: 1
 )
+
+:erts_internal.debug_off()
